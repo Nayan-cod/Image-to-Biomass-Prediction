@@ -163,3 +163,8 @@ Thumbs.db
 *.joblib
 *.pkl
 *.csv
+
+# Allow specific model files needed by the Streamlit app
+!best_model_info.pkl
+!best_regressor.joblib
+
