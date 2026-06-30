@@ -167,4 +167,6 @@ Thumbs.db
 # Allow specific model files needed by the Streamlit app
 !best_model_info.pkl
 !best_regressor.joblib
+!best_resnet50_weights.pth
+
 
