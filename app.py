@@ -148,7 +148,7 @@ if uploaded_file is not None and regressor is not None:
     
     col1, col2 = st.columns(2)
     with col1:
-        st.image(img_rgb, caption="Uploaded Pasture Image", use_container_width=True)
+        st.image(img_rgb, caption="Uploaded Pasture Image", width="stretch")
         
     # Run processing
     with st.spinner("Running GPU foundation models and predicting biomass..."):
@@ -184,7 +184,7 @@ if uploaded_file is not None and regressor is not None:
         seg_color[soil_mask] = [218, 165, 32] # GoldenRod
         
         with col2:
-            st.image(seg_color, caption="SegFormer Pasture Segmentation Mask (Green: Green Veg, Yellow: Soil/Dead)", use_container_width=True)
+            st.image(seg_color, caption="SegFormer Pasture Segmentation Mask (Green: Green Veg, Yellow: Soil/Dead)", width="stretch")
             
         # 2. Depth Anything Monocular Depth
         inputs_depth = depth_processor(images=img_rgb, return_tensors="pt").to(device)
@@ -264,8 +264,8 @@ if uploaded_file is not None and regressor is not None:
         
         gc_col1, gc_col2 = st.columns(2)
         with gc_col1:
-            st.image(img_rgb, caption="Original Pasture Image", use_container_width=True)
+            st.image(img_rgb, caption="Original Pasture Image", width="stretch")
         with gc_col2:
-            st.image(overlay, caption="DINOv2 Self-Attention Overlay (Red indicates regions driving model predictions)", use_container_width=True)
+            st.image(overlay, caption="DINOv2 Self-Attention Overlay (Red indicates regions driving model predictions)", width="stretch")
 else:
     st.info("👈 Please upload an RGB pasture image to start the prediction pipeline.")
