@@ -1,3 +1,13 @@
+streamlit
+opencv-python-headless
+numpy
+pandas
 torch
 torchvision
 scikit-image
+scikit-learn
+joblib
+transformers
+pillow
+tqdm
+matplotlib
